@@ -10,7 +10,8 @@ function generatePassword() {
   var numOfChar = parseInt(prompt("How many characters would you like in your password? Choose between 8 -128"))
     if (isNaN(numOfChar) || numOfChar > 128 || numOfChar < 8) {
         
-    window.alert("Ooops! Something went wrong. Please provide a number between 8 and 128")
+    window.alert("Ooops! Something went wrong. Please provide a number between 8 and 128");
+    numOfChar();
     }
   
   var withSpecialChar = confirm("Would you like special characters in your password?");
@@ -36,7 +37,8 @@ function generatePassword() {
 
     console.log(password);
     var finalPassword = "";
-
+   
+    // in the (), just tells us how many times we are doing this. In this case, the length of the numOfChar 
     for (var i = 0; i < numOfChar; i++) {
       var randomCharacter = password[Math.floor(Math.random() * password.length)];
       finalPassword = finalPassword + randomCharacter;
